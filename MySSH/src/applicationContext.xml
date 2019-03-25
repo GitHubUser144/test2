@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<bean id="action" class="com.action.CheciAction">
+		<property name="checi" ref="checi"></property>
+		<property name="service" ref="service"></property>
+	</bean>
+	<bean id="service" class="com.service.impl.CheciServiceImpl">
+		<property name="dao" ref="dao"></property>
+	</bean>
+	<bean id="dao" class="com.dao.impl.CheciDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<!-- hibernate相关配置 -->
+		<property name="hibernateProperties">
+			<props>
+				<!-- hibernate.connection.driver_class : 连接数据库的驱动 -->
+				<prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+				<!-- hibernate.connection.username : 连接数据库的用户名 -->
+				<prop key="hibernate.connection.username">root</prop>
+				<!-- hibernate.connection.password : 连接数据库的密码 -->
+				<prop key="hibernate.connection.password"></prop>
+				<!-- hibernate.connection.url : 连接数据库的地址,路径 -->
+				<prop key="hibernate.connection.url">jdbc:mysql:///ticket</prop>
+				<!-- show_sql: 操作数据库时,会 向控制台打印sql语句 -->
+				<prop key="show_sql">true</prop>
+				<!-- format_sql: 打印sql语句前,会将sql语句先格式化 -->
+				<prop key="format_sql">true</prop>
+
+				<!-- hibernate.connection.driver_class : 连接数据库的驱动 -->
+				<prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+				<!-- hibernate.connection.username : 连接数据库的用户名 -->
+				<prop key="hibernate.connection.username">root</prop>
+				<!-- hibernate.connection.password : 连接数据库的密码 -->
+				<prop key="hibernate.connection.password"></prop>
+				<!-- hibernate.connection.url : 连接数据库的地址,路径 -->
+				<prop key="hibernate.connection.url">jdbc:mysql:///ticket</prop>
+				<!-- show_sql: 操作数据库时,会 向控制台打印sql语句 -->
+				<prop key="show_sql">true</prop>
+				<!-- format_sql: 打印sql语句前,会将sql语句先格式化 -->
+				<prop key="format_sql">true</prop>
+			</props>
+		</property>
+		<!-- ORM -->
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:com/bean/*.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="checi" class="com.bean.Checi"></bean>
+</beans>

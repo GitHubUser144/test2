@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-3-25 15:53:46 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bean.Checi" table="T_CHECI">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="shifazhan" type="java.lang.String">
+            <column name="SHIFAZHAN" />
+        </property>
+        <property name="daodazhan" type="java.lang.String">
+            <column name="DAODAZHAN" />
+        </property>
+        <property name="piaoshijian" type="java.lang.String">
+            <column name="PIAOSHIJIAN" />
+        </property>
+        <property name="startshijian" type="java.lang.String">
+            <column name="STARTSHIJIAN" />
+        </property>
+        <property name="endshijian" type="java.lang.String">
+            <column name="ENDSHIJIAN" />
+        </property>
+        <property name="ctype" type="java.lang.String">
+            <column name="CTYPE" />
+        </property>
+        <property name="piaojia" type="int">
+            <column name="PIAOJIA" />
+        </property>
+        <property name="piaoshu" type="int">
+            <column name="PIAOSHU" />
+        </property>
+        <property name="del" type="java.lang.String">
+            <column name="DEL" />
+        </property>
+    </class>
+</hibernate-mapping>
