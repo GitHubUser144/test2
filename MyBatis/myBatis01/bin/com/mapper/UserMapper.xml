@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.UserMapper">
+<!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache "/> -->
+	<sql id="query_user_where">
+		<if test="ex_User!=null">
+			<if test="ex_User.name!=null and ex_User.name!=''">
+				AND name LIKE '%${ex_User.name}%'
+			</if>
+			<if test="ex_User.isadmin!=null and ex_User.isadmin!=''">
+				AND isadmin=#{ex_User.isadmin}
+			</if>
+			<if test="ids!=null">
+				<!-- 使用foreach实现sql拼接 : AND id=? OR id=? OR...-->
+				<foreach collection="ids" item="userID" open="AND (" close=")" separator="OR">
+					id=#{userID}
+				</foreach>
+			</if>
+		</if>
+	</sql>
+	<select id="findUser" parameterType="UserQueryVo" resultType="ex_User">
+		SELECT * FROM USERS
+		<where>
+			<!-- 引用SQL片段 -->
+			<include refid="query_user_where"></include>
+		</where>
+	</select>
+	<select id="findUserById" resultType="user" parameterType="int">
+		SELECT * FROM USERS WHERE id=#{id}
+	</select>
+	<insert id="addUser" parameterType="user">
+		<!-- <selectKey keyProperty="id" order="AFTER" resultType="int">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey> -->
+		INSERT USERS
+		VALUE(#{id},#{name},#{password},#{username},#{telephone},#{isadmin})
+	</insert>
+	<update id="updateUser" parameterType="user" >
+		UPDATE USERS SET name=#{name},password=#{password},username=#{username},telephone=#{telephone},isadmin=#{isadmin} WHERE id=#{id}
+	</update>
+	<delete id="deleteUser" parameterType="int" >
+		DELETE FROM USERS WHERE id=#{asdsadsadawda wd}
+	</delete>
+</mapper>
