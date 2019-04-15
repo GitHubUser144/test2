@@ -9,5 +9,6 @@
 <body>
 <a href="hello_ok">ok</a>
 <a href="fail">fail</a>
+<a href="testParam">testParam</a>
 </body>
 </html>
