@@ -19,7 +19,7 @@
 			<td width="10%">票数</td>
 			<td width="15%">操作</td>
 		</tr>
-		<c:forEach items="${list }" var="li">
+		<c:forEach items="${list}" var="li">
 			<tr align='center' bgcolor="#FFFFFF"
 				onMouseMove="javascript:this.bgColor='red';"
 				onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">

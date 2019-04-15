@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<context id="context1" targetRuntime="Mybatis3">
+		<!-- 生成的Java文件的编码 -->
+		<property name="javaFileEncoding" value="UTF-8"></property>
+		<commentGenerator>
+			<property name="suppressAllComments" value="true"></property>
+		</commentGenerator>
+		<!-- mysql数据库 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql:///housesys?characterEncoding=utf-8"
+			userId="root" password="" />
+		<!-- Oracle数据库 <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:localhost:1521:???" 
+			userId="???" password="???" /> -->
+		<!-- targetProject：生成javaBean的位置 targetPackage：生成javaBean的包名 -->
+		<javaModelGenerator targetPackage="cn.dazky.bean"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否使用‘schema作为包名的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- trimStrings:清理数据库返回的值的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="cn.dazky.mapper"
+			targetProject=".\src" />
+		<javaClientGenerator targetPackage="cn.dazky.mapper"
+			targetProject=".\src" type="XMLMAPPER" />
+		<table tableName="Users">
+			<!-- <columnOverride column="???" property="???" /> -->
+		</table>
+	</context>
+</generatorConfiguration>

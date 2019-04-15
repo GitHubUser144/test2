@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-4-1 19:23:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.dazky.entity.Token" table="TOKEN">
+        <id name="tokenId" type="int">
+            <column name="TOKENID" />
+            <generator class="native" />
+        </id>
+        <property name="userId" type="int">
+            <column name="USERID" />
+        </property>
+        <property name="userAgent" type="java.lang.String">
+            <column name="USERAGENT" />
+        </property>
+        <property name="token" type="java.lang.String">
+            <column name="TOKEN" />
+        </property>
+        <property name="createTime" type="java.lang.String">
+            <column name="CREATETIME" />
+        </property>
+        <property name="expireTime" type="java.lang.String">
+            <column name="EXPIRETIME" />
+        </property>
+    </class>
+</hibernate-mapping>
