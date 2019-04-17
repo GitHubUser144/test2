@@ -2,7 +2,7 @@ package cn.dazky.dao;
 
 import java.util.List;
 
-import cn.dazky.entity.Role;
+import cn.dazky.entity.Ex_User;
 import cn.dazky.entity.User;
 
 public interface UserDao {
@@ -44,4 +44,10 @@ public interface UserDao {
 	 * @return 是否修改成功
 	 */
 	public boolean updateUser(User user);
+	
+	/**
+	 * 比user表多显示一个roleName字段
+	 * @return
+	 */
+	public List<Ex_User> selectEx_Users();
 }

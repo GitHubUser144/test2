@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-4-1 19:23:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.dazky.entity.User" table="USER">
+        <id name="userId" type="int">
+            <column name="USERID" />
+            <generator class="native" />
+        </id>
+        <property name="userName" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="userType" type="int">
+            <column name="USERTYPE" />
+        </property>
+        <property name="roleId" type="int">
+            <column name="ROLEID" />
+        </property>
+        <property name="userDescription" type="java.lang.String">
+            <column name="USERDESCRIPTION" />
+        </property>
+        <set name="tokens" table="TOKEN" inverse="false" lazy="false">
+            <key>
+                <column name="USERID" />
+            </key>
+            <one-to-many class="cn.dazky.entity.Token" />
+        </set>
+    </class>
+</hibernate-mapping>

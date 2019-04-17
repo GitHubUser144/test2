@@ -1,0 +1,4 @@
+[framework][15:04:38,103-cn.dazky.action.UserAction.password(UserAction.java:153)][INFO]:-----java修改个人基本信息成功	 
+  [framework][15:04:38,182-cn.dazky.action.UserAction.quit(UserAction.java:127)][INFO]:-----java退出登录	 
+  [framework][15:04:43,589-cn.dazky.action.UserAction.login(UserAction.java:70)][INFO]:-----java登录成功	 
+  

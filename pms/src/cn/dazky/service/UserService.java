@@ -2,6 +2,7 @@ package cn.dazky.service;
 
 import java.util.List;
 
+import cn.dazky.entity.Ex_User;
 import cn.dazky.entity.Menu;
 import cn.dazky.entity.Role;
 import cn.dazky.entity.User;
@@ -48,7 +49,7 @@ public interface UserService {
 	 * @param user
 	 * @return
 	 */
-	public boolean dropUserById(int id);
+	public boolean dropUserByIds(String ids);
 	
 	/**
 	 * 获取所有user
@@ -62,5 +63,27 @@ public interface UserService {
 	 * @return
 	 */
 	public boolean updateUser(User user);
+	
+	/**
+	 * 修改用户的基本信息
+	 * @param user
+	 * @return
+	 */
+	public boolean modifyBaseInfo(User user);
+	
+	/**
+	 * 根据id获取一个user对象
+	 * @param id
+	 * @return
+	 */
+	public User getUserById(int id);
+	
+	/**
+	 * 前台显示数据的转换
+	 * @param users
+	 * @return
+	 */
+	public List<Ex_User> CastData(List<User> users);
+
 
 }

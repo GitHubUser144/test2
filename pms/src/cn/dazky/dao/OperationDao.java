@@ -38,4 +38,11 @@ public interface OperationDao {
 	 * @return 是否修改成功
 	 */
 	public boolean updateOperation(Operation operation);
+	
+	/**
+	 * 根据menuId查询对应的operation
+	 * @param menuId
+	 * @return
+	 */
+	public List<Operation> selectOperationsByMenuId(int menuId);
 }

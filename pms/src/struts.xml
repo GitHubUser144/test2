@@ -4,13 +4,16 @@
 <struts>
 	<constant name="struts.action.extension" value="action,,"></constant>
 	<constant name="struts.i18n.encoding" value="utf-8"></constant>
-<package name="struts" extends="struts-default,json-default" namespace="/">
+<package name="struts" extends="json-default" namespace="/">
 	<action name="User_*" class="cn.dazky.action.UserAction" method="{1}">
 		<result name="login_ok">/main.jsp</result>
 		<result name="login_fail">/login.jsp</result>
 	</action>
 	<action name="Role_*" class="cn.dazky.action.RoleAction" method="{1}">
-		
+		<result type="json" name="jjj">
+			<param name="root">result</param>
+		</result>
+		<result name="relogin">/login.jsp</result>
 	</action>
 	<action name="Menu_*" class="cn.dazky.action.MenuAction" method="{1}">
 			

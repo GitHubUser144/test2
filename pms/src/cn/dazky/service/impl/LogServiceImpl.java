@@ -1,5 +1,6 @@
 package cn.dazky.service.impl;
 
+
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -20,9 +21,13 @@ public class LogServiceImpl implements LogService {
 	}
 
 	@Override
-	public boolean dropLogById(int id) {
-		
-		return dao.deleteLogById(id);
+	public boolean dropLogByIds(String ids) {
+		String[] str=ids.split(",");
+		for(String sss:str) {
+			if(!dao.deleteLogById(Integer.parseInt(sss)))
+					return false;
+		}
+		return true;
 	}
 
 	@Override

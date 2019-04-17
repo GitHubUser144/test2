@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-4-1 19:17:19 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.dazky.entity.Menu" table="MENU">
+        <id name="menuId" type="int">
+            <column name="MENUID" />
+            <generator class="native" />
+        </id>
+        <property name="menuName" type="java.lang.String">
+            <column name="MENUNAME" />
+        </property>
+        <property name="menuUrl" type="java.lang.String">
+            <column name="MENUURL" />
+        </property>
+        <property name="parentId" type="int">
+            <column name="PARENTID" />
+        </property>
+        <property name="menuDescription" type="java.lang.String">
+            <column name="MENUDESCRIPTION" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+        <property name="iconCls" type="java.lang.String">
+            <column name="ICONCLS" />
+        </property>
+        <property name="seq" type="int">
+            <column name="SEQ" />
+        </property>
+        <set name="operations" table="OPERATION" inverse="false" lazy="false">
+            <key>
+                <column name="MENUID" />
+            </key>
+            <one-to-many class="cn.dazky.entity.Operation" />
+        </set>
+    </class>
+</hibernate-mapping>

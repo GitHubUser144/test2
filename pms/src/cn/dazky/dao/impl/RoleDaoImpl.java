@@ -16,6 +16,7 @@ public class RoleDaoImpl extends HibernateDaoSupport implements RoleDao {
 	public void setSF(SessionFactory sessionFactory) {
 		super.setSessionFactory(sessionFactory);
 	}
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Role> selectAllRoles() {
 		return (List<Role>) this.getHibernateTemplate().find("from Role");

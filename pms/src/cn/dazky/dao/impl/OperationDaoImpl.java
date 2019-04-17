@@ -60,4 +60,8 @@ public class OperationDaoImpl extends HibernateDaoSupport implements OperationDa
 		}
 		return true;
 	}
+	@Override
+	public List<Operation> selectOperationsByMenuId(int menuId) {
+		return (List<Operation>) super.getHibernateTemplate().find("from Operation where menuId="+menuId);
+	}
 }

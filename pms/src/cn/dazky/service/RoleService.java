@@ -16,7 +16,7 @@ public interface RoleService {
 	 * @param id
 	 * @return
 	 */
-	public boolean dropRoleById(int id);
+	public boolean dropRoleByIds(String ids);
 	
 	/**
 	 * 添加角色
@@ -38,5 +38,25 @@ public interface RoleService {
 	 * @param menus
 	 * @return
 	 */
-	public boolean grant(int id,String menus);
+	public boolean grant(int id,String menus,String operations);
+	
+	/**
+	 * 根据角色id查询一个角色
+	 * @param id
+	 * @return
+	 */
+	public Role findRoleById(int id);
+	/**
+	 * 根据登录的用户返回一个对应的角色对象
+	 * @param userId
+	 * @return
+	 */
+	public Role findRoleByUserId(int userId);
+	
+	/**
+	 * 根据按钮生成应该展开的菜单
+	 * @param operations
+	 * @return
+	 */
+	public String GenerateMenuIdsByOperations(String operations);
 }

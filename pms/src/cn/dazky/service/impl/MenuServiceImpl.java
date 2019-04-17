@@ -16,14 +16,18 @@ public class MenuServiceImpl implements MenuService {
 	private MenuDao dao;
 	
 	@Override
-	public List<?> getAllMenus(){
+	public List<Menu> getAllMenus(){
 		return dao.selectAllMenus();
 	}
 
 	@Override
-	public boolean dropMenuById(int id) {
-		
-		return dao.deleteMenuById(id);
+	public boolean dropMenuByIds(String ids) {
+		String[] str=ids.split(",");
+		for(String sss:str) {
+			if(!dao.deleteMenuById(Integer.parseInt(sss)))
+					return false;
+		}
+		return true;
 	}
 
 	@Override

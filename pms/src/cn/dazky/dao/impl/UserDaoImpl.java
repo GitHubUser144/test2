@@ -12,6 +12,7 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import cn.dazky.dao.UserDao;
+import cn.dazky.entity.Ex_User;
 import cn.dazky.entity.User;
 
 @Repository("userDaoImpl")
@@ -74,5 +75,9 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 			return false;
 		}
 		return true;
+	}
+	
+	public List<Ex_User> selectEx_Users() {
+		return (List<Ex_User>) this.getHibernateTemplate().find("select User.*,Role.roleName from User natural join Role");
 	}
 }

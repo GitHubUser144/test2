@@ -16,7 +16,7 @@ public interface MenuService {
 	 * @param id
 	 * @return
 	 */
-	public boolean dropMenuById(int id);
+	public boolean dropMenuByIds(String ids);
 	
 	/**
 	 * Ìí¼Ó²Ëµ¥

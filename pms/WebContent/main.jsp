@@ -17,7 +17,7 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
-    <div class="layui-logo">权限管理系统</div>
+    <div class="layui-logo"><i class="layui-icon"></i>&nbsp;权限管理系统<em>2.0</em></div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
       <li class="layui-nav-item"><a href="">控制台</a></li>
@@ -35,12 +35,12 @@
     <ul class="layui-nav layui-layout-right">
       <li class="layui-nav-item">
         <a href="javascript:;">
-          <img src="" class="layui-nav-img">
+          <img src="<%=path %>/data/selfInfo.jpg" class="layui-nav-img">
           ${user.userName}
         </a>
         <dl class="layui-nav-child">
-          <dd><a href="">基本资料</a></dd>
-          <dd><a href="">安全退出</a></dd>
+          <dd><a href="#" id="info">基本资料</a></dd>
+          <dd><a href="User_quit">安全退出</a></dd>
         </dl>
       </li>
     </ul>
@@ -68,7 +68,7 @@
     </div>
   </div>
   
-  <div class="layui-body" id="mainFrame">
+  <div class="layui-body" id="mainFrame" style="margin-top: -10px;">
     <!-- 内容主体区域 -->
      <%@include file="default.jsp" %> 
   </div>
@@ -98,6 +98,21 @@ $('.jump').on('click',function(e){
   		});
   	}
   });
+$('#info').on('click',function(e){
+	e.preventDefault();
+	layer.open({
+        type: 2,
+        skin: 'layui-layer-molv', //样式类名
+        title: '个人资料',
+        closeBtn: 0, //不显示关闭按钮
+        anim: 4, //动画效果
+        area: ['800px', '650px'],
+        content: '<%=path%>/selfInfo.jsp'
+        ,end:function(layero, index){
+        	window.location.href='User_quit';
+         }
+    });
+})
 </script>
 </body>
 </html>

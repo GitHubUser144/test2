@@ -1,0 +1,51 @@
+[framework][09:46:59,994-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Parsing configuration file [struts-default.xml] 
+  [framework][09:47:00,104-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Parsing configuration file [struts-plugin.xml] 
+  [framework][09:47:00,117-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Parsing configuration file [struts.xml] 
+  [framework][09:47:00,120-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (spring) for (com.opensymphony.xwork2.ObjectFactory) 
+  [framework][09:47:00,120-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.factory.ActionFactory) 
+  [framework][09:47:00,121-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.factory.ResultFactory) 
+  [framework][09:47:00,121-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.factory.ConverterFactory) 
+  [framework][09:47:00,121-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.factory.InterceptorFactory) 
+  [framework][09:47:00,121-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.factory.ValidatorFactory) 
+  [framework][09:47:00,122-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.factory.UnknownHandlerFactory) 
+  [framework][09:47:00,122-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.FileManagerFactory) 
+  [framework][09:47:00,122-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter) 
+  [framework][09:47:00,123-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.CollectionConverter) 
+  [framework][09:47:00,123-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.ArrayConverter) 
+  [framework][09:47:00,123-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.DateConverter) 
+  [framework][09:47:00,124-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.NumberConverter) 
+  [framework][09:47:00,125-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.StringConverter) 
+  [framework][09:47:00,125-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionPropertiesProcessor) 
+  [framework][09:47:00,125-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionFileProcessor) 
+  [framework][09:47:00,126-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionAnnotationProcessor) 
+  [framework][09:47:00,126-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterCreator) 
+  [framework][09:47:00,127-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterHolder) 
+  [framework][09:47:00,127-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider) 
+  [framework][09:47:00,127-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.LocaleProvider) 
+  [framework][09:47:00,127-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory) 
+  [framework][09:47:00,127-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer) 
+  [framework][09:47:00,128-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper) 
+  [framework][09:47:00,128-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest) 
+  [framework][09:47:00,128-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager) 
+  [framework][09:47:00,129-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer) 
+  [framework][09:47:00,130-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager) 
+  [framework][09:47:00,130-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory) 
+  [framework][09:47:00,130-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider) 
+  [framework][09:47:00,130-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory) 
+  [framework][09:47:00,131-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher) 
+  [framework][09:47:00,131-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (org.apache.struts2.util.ContentTypeMatcher) 
+  [framework][09:47:00,131-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader) 
+  [framework][09:47:00,131-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager) 
+  [framework][09:47:00,132-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper) 
+  [framework][09:47:00,132-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.util.TextParser) 
+  [framework][09:47:00,132-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (org.apache.struts2.dispatcher.DispatcherErrorHandler) 
+  [framework][09:47:00,132-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.security.ExcludedPatternsChecker) 
+  [framework][09:47:00,132-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Choosing bean (struts) for (com.opensymphony.xwork2.security.AcceptedPatternsChecker) 
+  [framework][09:47:00,150-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Initializing Struts-Spring integration... 
+  [framework][09:47:00,150-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:Setting autowire strategy to name 
+  [framework][09:47:00,150-com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info(CommonsLogger.java:46)][INFO]:... initialized Struts-Spring integration successfully 
+  [framework][09:47:05,805-cn.dazky.action.UserAction.login(UserAction.java:70)][INFO]:-----java登录成功	 
+  [framework][09:47:10,221-cn.dazky.action.UserAction.password(UserAction.java:153)][INFO]:-----java修改个人基本信息成功	 
+  [framework][09:47:10,342-cn.dazky.action.UserAction.quit(UserAction.java:127)][INFO]:-----java退出登录	 
+  [framework][09:48:17,198-cn.dazky.action.UserAction.login(UserAction.java:70)][INFO]:-----java登录成功	 
+  

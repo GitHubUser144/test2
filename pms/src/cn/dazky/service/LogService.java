@@ -16,7 +16,7 @@ public interface LogService {
 	 * @param id
 	 * @return
 	 */
-	public boolean dropLogById(int id);
+	public boolean dropLogByIds(String ids);
 	
 	/**
 	 * Ìí¼Ó

@@ -17,15 +17,14 @@ public class Menu implements Serializable{
 	private String status;
 	private String iconCls;
 	private int seq;
-	private Set<Operation> operations=new HashSet<Operation>(0);
 
-	
-	public Set<Operation> getOperations() {
-		return operations;
-	}
-	public void setOperations(Set<Operation> operations) {
-		this.operations = operations;
-	}
+	/*
+	 * private Set<Operation> operations=new HashSet<Operation>(0);
+	 * 
+	 * 
+	 * public Set<Operation> getOperations() { return operations; } public void
+	 * setOperations(Set<Operation> operations) { this.operations = operations; }
+	 */
 	public Menu(int menuId, String menuName, String menuUrl, int parentId, String menuDescription, String status,
 			String iconCls, int seq) {
 		super();

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%
 	String path = request.getContextPath();
 %>
@@ -16,14 +17,49 @@
 <link rel="stylesheet" href="<%=path %>/layui/css/layui.css" media="all">
 <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 <script type="text/javascript" src="<%=path %>/layui/jquery-3.3.1.js"></script>
+<style>
+body 
+{
+margin-top:0px;
+background-image:url('data/BG.jpg');
+background-repeat:no-repeat;
+background-size: 100% 100%;
+background-attachment:fixed;
+}
+#download{
+float:left;
+display:block;
+color:white;
+background:rgb(0,150,136);
+}
+#test{
+margin-top:-50px;
+}
+</style>
 </head>
 <body>
 
 	<table class="layui-hide" id="test" lay-filter="test"></table>
-
+	
 <script type="text/html" id="toolbarDemo">
   <div class="layui-btn-container">
-    <button class="layui-btn layui-btn-sm" lay-event="deleteLog">删除日志</button>
+
+<c:choose>
+	<c:when test="${fn:contains(loginRole.operationIds,'10013')}">
+   		<button class="layui-btn layui-btn-sm"" lay-event="deleteLog">删除日志</button>
+	</c:when>
+	<c:otherwise>
+		<button class="layui-btn layui-btn-sm" layui-btn-disabled">删除日志</button>
+	</c:otherwise>
+</c:choose>
+<c:choose>
+	<c:when test="${fn:contains(loginRole.operationIds,'10015')}">
+    	<a href="/pms/log/mylog.log" download="" id="download" class="layui-btn layui-btn-sm"">下载日志</a>
+	</c:when>
+	<c:otherwise>
+		<a href="#" download="" class="layui-btn layui-btn-sm" layui-btn-disabled">下载日志</a>
+	</c:otherwise>
+</c:choose>
   </div>
 </script>
 
@@ -32,7 +68,6 @@
 <script>
 layui.use('table', function(){
   var table = layui.table;
-  
   table.render({
     elem: '#test'
     ,url:'LogJson'
@@ -40,15 +75,15 @@ layui.use('table', function(){
     ,title: '日志数据表'
     ,cols: [[
         {type: 'checkbox', fixed: 'left'}
-        ,{field:'logId', title:'日志编号', width:100,sort: true}
-        ,{field:'userName', title:'用户名', width:100}
-        ,{field:'createTime', title:'时间', width:280,sort:true}
-        ,{field:'operation', title:'操作', width:80}
-        ,{field:'content', title:'内容', width:280}
-        ,{field:'ip', title:'IP地址', width:280}
-        ,{field:'module', title:'所属模块'}
+        ,{field:'logId',align:'center', title:'日志编号', width:100,sort: true}
+        ,{field:'userName',align:'center', title:'用户名', width:100}
+        ,{field:'createTime',align:'center', title:'时间', width:180,sort:true}
+        ,{field:'operation',align:'center', title:'操作', width:80}
+        ,{field:'content',align:'center', title:'内容', width:280}
+        ,{field:'ip',align:'center', title:'IP地址', width:280}
+        ,{field:'module',align:'center', fixed: 'right',title:'所属模块'}
       ]]
-    ,page: true
+    ,page: {theme:"萨达"}
   });
   //头工具栏事件
   table.on('toolbar(test)', function(obj){
@@ -67,9 +102,11 @@ layui.use('table', function(){
                   ,icon: 2    // icon
                   ,yes:function(){
                       // layer.msg('确定', { icon: 1, time: 1500 });
-                      for (var i=0;i<data.length;i++){
+                      var ids=data[0].logId;  
+                      for (var i = 1; i < data.length; i++)
+                     		 {ids=ids+","+data[i].logId}
                           //发送请求到后台
-                          $.post("Log_delete", {logId: data[i].logId }, function (result) {
+                          $.post("Log_delete", {logIds: ids}, function (result) {
                               if (result=="1") {//删除成功，刷新当前页表格
                                    //obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
                                   layer.msg("删除成功", { icon: 1, time: 1500 });
@@ -80,7 +117,6 @@ layui.use('table', function(){
                                   });
                               }
                           });
-                      }
                   }
                   ,btn2:function(){
                       layer.msg('好的,暂时不给您删除。',{ icon: 1, time: 1500 });
@@ -88,6 +124,12 @@ layui.use('table', function(){
               });
           }
           break;
+      case 'saveLog': 
+    	  
+    	  break;
+      case 'downloadLog': 
+          window.location.href="/pms/log/mylog.log";
+    	  break;
     };
   });
   

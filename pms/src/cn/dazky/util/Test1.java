@@ -10,15 +10,7 @@ import cn.dazky.entity.User;
 public class Test1 {
 	@Test
 	public void addUser(){
-	 try {
-		System.out.println(InetAddress.getLocalHost().toString());
-	} catch (UnknownHostException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+	 String s = null;
+	 System.out.println(s);
 	}
-			
-			
-			
-			
-	}	
 }

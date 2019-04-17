@@ -71,6 +71,7 @@
 			var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
 			parent.layer.close(index); //再执行关闭
 			parent.layer.msg("修改成功");
+			return true;
 		}
 		layui.use(['layedit','form'], function() {
 			var form=layui.form;
@@ -78,14 +79,13 @@
 			//获取父窗口的json数据
 			var jsonData=sessionStorage.getItem("jsonData");
 			var json=JSON.parse(jsonData);
-			//layer.alert("'"+json[0].password+"'");
-			
+			alert(jsonData);
 			form.val('example', {
-			    "userName":json[0].userName // "name": "value"
-			    ,"password":json[0].password
-			    ,"roleId":eval(json[0].roleId)
-			    ,"userDescription":json[0].userDescription	
-			    ,"userId":eval(json[0].userId)
+			    "userName":json[0].user.userName // "name": "value"
+			    ,"password":json[0].user.password
+			    ,"roleId":eval(json[0].user.roleId)
+			    ,"userDescription":json[0].user.userDescription	
+			    ,"userId":eval(json[0].user.userId)
 			  })
 			  layedit.build('demo'); //建立编辑器
 		});

@@ -29,11 +29,11 @@
         <property name="seq" type="int">
             <column name="SEQ" />
         </property>
-        <set name="operations" table="OPERATION" inverse="false" lazy="false">
+       <!--  <set name="operations" table="OPERATION" inverse="false" lazy="false">
             <key>
                 <column name="MENUID" />
             </key>
             <one-to-many class="cn.dazky.entity.Operation" />
-        </set>
+        </set> -->
     </class>
 </hibernate-mapping>

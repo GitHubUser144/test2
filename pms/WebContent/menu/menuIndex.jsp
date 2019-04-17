@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%
 	String path = request.getContextPath();
 %>
@@ -15,6 +16,15 @@
   <link rel="stylesheet" href="<%=path %>/layui/css/layui.css"  media="all">
   <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
   <script type="text/javascript" src="<%=path %>/layui/jquery-3.3.1.js"></script>
+<style>
+body 
+{
+background-image:url('data/BG.jpg');
+background-repeat:no-repeat;
+background-size: 100% 100%;
+background-attachment:fixed;
+}
+</style>
 </head>
 <body>
  
@@ -22,9 +32,31 @@
  
 <script type="text/html" id="toolbarDemo">
   <div class="layui-btn-container">
-    <button class="layui-btn layui-btn-sm" lay-event="addMenu">添加菜单</button>
-    <button class="layui-btn layui-btn-sm" lay-event="deleteMenu">删除菜单</button>
-    <button class="layui-btn layui-btn-sm" lay-event="editMenu">编辑菜单</button>
+    <c:choose>
+	<c:when test="${fn:contains(loginRole.operationIds,'10000')}">
+   		<button class="layui-btn layui-btn-sm" lay-event="addMenu">添加菜单</button>
+	</c:when>
+	<c:otherwise>
+		<button class="layui-btn layui-btn-sm" layui-btn-disabled">添加菜单</button>
+	</c:otherwise>
+</c:choose>
+<c:choose>
+	<c:when test="${fn:contains(loginRole.operationIds,'10002')}">
+    	<button class="layui-btn layui-btn-sm" lay-event="deleteMenu">删除菜单</button>
+	</c:when>
+	<c:otherwise>
+		<button class="layui-btn layui-btn-sm" layui-btn-disabled">删除菜单</button>
+	</c:otherwise>
+</c:choose>
+
+<c:choose>
+	<c:when test="${fn:contains(loginRole.operationIds,'10001')}">
+    	<button class="layui-btn layui-btn-sm" lay-event="editMenu">编辑菜单</button>
+	</c:when>
+	<c:otherwise>
+		<button class="layui-btn layui-btn-sm" layui-btn-disabled">编辑菜单</button>
+	</c:otherwise>
+</c:choose>	
   </div>
 </script>              
           
@@ -40,12 +72,12 @@ layui.use('table', function(){
     ,toolbar: '#toolbarDemo'
     ,title: '菜单数据表'
     ,cols: [[
-        {type: 'checkbox', fixed: 'left'}
-        ,{field:'menuId', title:'菜单编号', width:180,sort: true}
-        ,{field:'menuName', title:'菜单名', width:180}
-        ,{field:'menuUrl', title:'菜单路径', width:280}
-        ,{field:'parentId', title:'菜单等级', width:280,sort: true}
-        ,{field:'menuDescription', title:'备注'}
+        {type: 'checkbox',align:'center', fixed: 'left'}
+        ,{field:'menuId',align:'center', title:'菜单编号', width:180,sort: true}
+        ,{field:'menuName',align:'center', title:'菜单名', width:180}
+        ,{field:'menuUrl',align:'center', title:'菜单路径', width:280}
+        ,{field:'parentId',align:'center', title:'菜单等级', width:280,sort: true}
+        ,{field:'menuDescription',align:'center', title:'备注'}
       ]]
     ,page: true
   });
@@ -55,7 +87,6 @@ layui.use('table', function(){
 	    ,data = checkStatus.data; //获取选中的数据
     switch(obj.event){
       case 'addMenu':
-
           layer.open({
               type: 2,
               skin: 'layui-layer-molv', //样式类名
@@ -83,9 +114,12 @@ layui.use('table', function(){
                   ,icon: 2    // icon
                   ,yes:function(){
                       // layer.msg('确定', { icon: 1, time: 1500 });
-                      for (var i=0;i<data.length;i++){
+                    	  var ids=data[0].menuId;  
+                    	  for (var i = 1; i < data.length; i++)
+                    	  {ids=ids+","+data[i].menuId}
+
                           //发送请求到后台
-                          $.post("Menu_delete", { menuId: data[i].menuId }, function (result) {
+                          $.post("Menu_delete", {menuIds: ids}, function (result) {
                               if (result=="1") {//删除成功，刷新当前页表格
                                   // obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
                                   layer.msg("删除成功", { icon: 1, time: 1500 });
@@ -99,7 +133,6 @@ layui.use('table', function(){
                                   });
                               }
                           });
-                      }
                   }
                   ,btn2:function(){
                       layer.msg('好的,暂时不给您删除。',{ icon: 1, time: 1500 });
@@ -131,7 +164,6 @@ layui.use('table', function(){
     	  }else{
     		  layer.msg("最多选择一个", { icon: 2, time: 1000 });
     	  }break; 
-      break;
     };
   });
   

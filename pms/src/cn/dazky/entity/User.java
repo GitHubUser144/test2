@@ -1,8 +1,6 @@
 package cn.dazky.entity;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 import org.springframework.stereotype.Component;
 @SuppressWarnings("serial")
@@ -14,15 +12,13 @@ public class User implements Serializable{
 	private int userType;
 	private int roleId;
 	private String userDescription;
-	private Set<Token> tokens=new HashSet<Token>(0);
-
-	public Set<Token> getTokens() {
-		return tokens;
-	}
-
-	public void setTokens(Set<Token> tokens) {
-		this.tokens = tokens;
-	}
+	/*
+	 * private Set<Token> tokens=new HashSet<Token>(0);
+	 * 
+	 * public Set<Token> getTokens() { return tokens; }
+	 * 
+	 * public void setTokens(Set<Token> tokens) { this.tokens = tokens; }
+	 */
 
 	public User() {}
 	
@@ -35,7 +31,6 @@ public class User implements Serializable{
 		this.roleId = roleId;
 		this.userDescription = userDescription;
 	}
-	 
 	public String getUserName() {
 		return userName;
 	}

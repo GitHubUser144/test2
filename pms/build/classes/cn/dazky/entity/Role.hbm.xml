@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2019-4-1 19:17:19 by Hibernate Tools 3.4.0.CR1 -->
-<hibernate-mapping>
-    <class name="cn.dazky.entity.Role" table="ROLE">
-        <id name="roleId" type="int">
-            <column name="ROLEID" />
-            <generator class="native" />
-        </id>
-        <property name="roleName" type="java.lang.String">
-            <column name="ROLENAME" />
-        </property>
-        <property name="menuIds" type="java.lang.String">
-            <column name="MENUIDS" />
-        </property>
-        <property name="operationIds" type="java.lang.String">
-            <column name="OPERATIONIDS" />
-        </property>
-        <property name="roleDescription" type="java.lang.String">
-            <column name="ROLEDESCRIPTION" />
-        </property>
-        <set name="users" table="USER" inverse="false" lazy="false" access="field">
-            <key>
-                <column name="ROLEID" />
-            </key>
-            <one-to-many class="cn.dazky.entity.User" />
-        </set>
-    </class>
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-4-17 18:56:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping default-lazy="false">
+ <class name="cn.dazky.entity.Role" table="ROLE">
+  <id name="roleId" type="int">
+   <column name="ROLEID"/>
+   <generator class="native"/>
+  </id>
+  <property generated="never" lazy="false" name="roleName" type="java.lang.String">
+   <column name="ROLENAME"/>
+  </property>
+  <property generated="never" lazy="false" name="menuIds" type="java.lang.String">
+   <column name="MENUIDS"/>
+  </property>
+  <property generated="never" lazy="false" name="operationIds" type="java.lang.String">
+   <column name="OPERATIONIDS"/>
+  </property>
+  <property generated="never" lazy="false" name="roleDescription" type="java.lang.String">
+   <column name="ROLEDESCRIPTION"/>
+  </property>
+  <!-- <set access="field" lazy="true" name="users" sort="unsorted" table="USER">
+   <key>
+    <column name="ROLEID"/>
+   </key>
+   <one-to-many class="cn.dazky.entity.User"/>
+  </set> -->
+ </class>
 </hibernate-mapping>

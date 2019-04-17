@@ -14,6 +14,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 import cn.dazky.entity.Log;
 import cn.dazky.service.LogService;
+import cn.dazky.util.PageUtil;
 import cn.dazky.util.WriterUtil;
 import net.sf.json.JSONObject;
 @Controller
@@ -23,6 +24,23 @@ public class LogAction extends ActionSupport implements ModelDriven<Log> {
 	private Log log;
 	@Resource(name="logServiceImpl")
 	private LogService service;
+	@Resource(name="pageUtil")
+	private PageUtil pageUtil;
+	private Integer page;
+	private Integer limit;
+	
+	public Integer getPage() {
+		return page;
+	}
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+	public Integer getLimit() {
+		return limit;
+	}
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+	}
 	public Log getModel() {
 		return log;
 	}
@@ -34,11 +52,11 @@ public class LogAction extends ActionSupport implements ModelDriven<Log> {
 		this.jsondata = jsondata;
 	}
 	public String json() {
-		List<?> logs=service.getAllLogs();
+		List<?> logs=pageUtil.Pagination(Log.class, limit, page);
 		Map<String,Object> map=new HashMap<String,Object>();
 		map.put("code",0);
 		map.put("msg","");
-		map.put("count",logs.size());
+		map.put("count",service.getAllLogs().size());
 		map.put("data",logs);
 		jsondata = JSONObject.fromObject(map);
 		System.out.println("json数据"+jsondata);
@@ -46,12 +64,13 @@ public class LogAction extends ActionSupport implements ModelDriven<Log> {
 	}
 	public String delete() {
 //		System.out.println("准备删除的Role"+role);
-		if(service.dropLogById(log.getLogId()))
+		String logIds=ServletActionContext.getRequest().getParameter("logIds");
+		System.out.println("准备删除的所有id"+logIds);
+		if(service.dropLogByIds(logIds))
 			WriterUtil.write(ServletActionContext.getResponse(), "1");
 		else 
 			WriterUtil.write(ServletActionContext.getResponse(), "-1");
 		
 		return null;
 	}
-
 }

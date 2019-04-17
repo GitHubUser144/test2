@@ -60,7 +60,7 @@
             </div>
             <div class="navbar-translate">
                 <a class="navbar-brand" href="#" rel="tooltip" data-placement="bottom">
-                    权限管理系统
+                    权限管理系统<em>2.0</em>
                 </a>
                 <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar bar1"></span>
