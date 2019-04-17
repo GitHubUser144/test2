@@ -9,23 +9,20 @@
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
   <context-param>
-          <param-name>log4jConfigLocation</param-name>
-          <param-value>classpath:log4j.properties</param-value>
-     </context-param>
-    <!-- 加载log4j配置文件 -->
-    <listener>
-      <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-    </listener>
-    
-    <!-- 在自定义的Servlet中设置log4j的存储地址。不需要配置servlet-mapping，load-on-startup设置为0，会在web容器启动时候就装入该servlet。 -->
-    <servlet>
-        <servlet-name>systemServlet</servlet-name>
-        <servlet-class>cn.dazky.util.SystemServlet</servlet-class>
-        <init-param>
-            <param-name>log4j.root.path</param-name>
-            <param-value></param-value>
-        </init-param>
-    </servlet>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>classpath:log4j.properties</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>systemServlet</servlet-name>
+    <servlet-class>cn.dazky.util.SystemServlet</servlet-class>
+    <init-param>
+      <param-name>log4j.root.path</param-name>
+      <param-value></param-value>
+    </init-param>
+  </servlet>
   <filter>
     <filter-name>struts2</filter-name>
     <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
