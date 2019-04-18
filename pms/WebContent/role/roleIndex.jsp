@@ -16,15 +16,6 @@
   <link rel="stylesheet" href="<%=path %>/layui/css/layui.css"  media="all">
   <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
   <script type="text/javascript" src="<%=path %>/layui/jquery-3.3.1.js"></script>
-<style>
-body 
-{
-background-image:url('data/BG.jpg');
-background-repeat:no-repeat;
-background-size: 100% 100%;
-background-attachment:fixed;
-}
-</style>
 </head>
 <body>
  
@@ -37,7 +28,7 @@ background-attachment:fixed;
    		<button class="layui-btn layui-btn-sm" lay-event="addRole">添加角色</button>
 	</c:when>
 	<c:otherwise>
-		<button class="layui-btn layui-btn-sm" layui-btn-disabled">添加角色</button>
+		<button class="layui-btn layui-btn-sm layui-btn-disabled">添加角色</button>
 	</c:otherwise>
 </c:choose>
 <c:choose>
@@ -45,7 +36,7 @@ background-attachment:fixed;
     	<button class="layui-btn layui-btn-sm" lay-event="deleteRole">删除角色</button>
 	</c:when>
 	<c:otherwise>
-		<button class="layui-btn layui-btn-sm" layui-btn-disabled">删除角色</button>
+		<button class="layui-btn layui-btn-sm layui-btn-disabled">删除角色</button>
 	</c:otherwise>
 </c:choose>
 
@@ -54,7 +45,7 @@ background-attachment:fixed;
     	<button class="layui-btn layui-btn-sm" lay-event="editRole">编辑角色</button>
 	</c:when>
 	<c:otherwise>
-		<button class="layui-btn layui-btn-sm" layui-btn-disabled">编辑角色</button>
+		<button class="layui-btn layui-btn-sm layui-btn-disabled">编辑角色</button>
 	</c:otherwise>
 </c:choose>	
 </div>

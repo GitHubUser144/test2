@@ -10,15 +10,6 @@
 <head>
 <meta charset="utf-8">
 <title>layui</title>
-<style>
-body 
-{
-background-image:url('data/BG.jpg');
-background-repeat:no-repeat;
-background-size: 100% 100%;
-background-attachment:fixed;
-}
-</style>
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -36,15 +27,15 @@ background-attachment:fixed;
    		<button class="layui-btn layui-btn-sm" lay-event="addUser">添加用户</button>
 	</c:when>
 	<c:otherwise>
-		<button class="layui-btn layui-btn-sm"" layui-btn-disabled">添加用户</button>
+		<button class="layui-btn layui-btn-sm layui-btn-disabled">添加用户</button>
 	</c:otherwise>
 </c:choose>
 <c:choose>
 	<c:when test="${fn:contains(loginRole.operationIds,'10005')}">
-    	<button class="layui-btn layui-btn-sm"" lay-event="deleteUser">删除用户</button>
+    	<button class="layui-btn layui-btn-sm" lay-event="deleteUser">删除用户</button>
 	</c:when>
 	<c:otherwise>
-		<button class="layui-btn layui-btn-sm" layui-btn-disabled">删除用户</button>
+		<button class="layui-btn layui-btn-sm  layui-btn-disabled">删除用户</button>
 	</c:otherwise>
 </c:choose>
 
@@ -53,7 +44,7 @@ background-attachment:fixed;
     	<button class="layui-btn layui-btn-sm" lay-event="editUser">编辑用户</button>
 	</c:when>
 	<c:otherwise>
-		<button class="layui-btn layui-btn-sm" layui-btn-disabled">编辑用户</button>
+		<button class="layui-btn layui-btn-sm  layui-btn-disabled">编辑用户</button>
 	</c:otherwise>
 </c:choose>	
 </div>

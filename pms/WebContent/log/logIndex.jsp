@@ -18,14 +18,7 @@
 <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 <script type="text/javascript" src="<%=path %>/layui/jquery-3.3.1.js"></script>
 <style>
-body 
-{
-margin-top:0px;
-background-image:url('data/BG.jpg');
-background-repeat:no-repeat;
-background-size: 100% 100%;
-background-attachment:fixed;
-}
+
 #download{
 float:left;
 display:block;
@@ -49,7 +42,7 @@ margin-top:-50px;
    		<button class="layui-btn layui-btn-sm"" lay-event="deleteLog">删除日志</button>
 	</c:when>
 	<c:otherwise>
-		<button class="layui-btn layui-btn-sm" layui-btn-disabled">删除日志</button>
+		<button class="layui-btn layui-btn-sm layui-btn-disabled">删除日志</button>
 	</c:otherwise>
 </c:choose>
 <c:choose>
@@ -57,7 +50,7 @@ margin-top:-50px;
     	<a href="/pms/log/mylog.log" download="" id="download" class="layui-btn layui-btn-sm"">下载日志</a>
 	</c:when>
 	<c:otherwise>
-		<a href="#" download="" class="layui-btn layui-btn-sm" layui-btn-disabled">下载日志</a>
+		<a href="#" download="" class="layui-btn layui-btn-sm layui-btn-disabled">下载日志</a>
 	</c:otherwise>
 </c:choose>
   </div>

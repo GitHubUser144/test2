@@ -56,13 +56,12 @@
 						"roleId": d
 					},
 					success : function(result) {
-						var roleId=${loginRole.roleId};
+						/* var roleId=${loginRole.roleId};
 						if(roleId==d){
-							parent.location.href='User_quit';
 							parent.layer.alert("检测到您的权限发生改变,系统已自动退出");
 							//layer.close(this)
 					}
-							else
+							else */
 							parent.layer.msg("授权成功");
 						var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
 						parent.layer.close(index); //再执行关闭
